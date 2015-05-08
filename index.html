@@ -7,23 +7,43 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <link rel="stylesheet" href="style.css"> <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="style/style.css"> <!-- build:css(.tmp) styles/main.css -->
   </head>
 
-  <body><!-- begin body -->
+  <body><!-- begin body build the game here -->
 
+    <div id="main">
+      <h1 id="main_heading" class="heading" >Let's Play Tic Tac Toe!</h1>
+      <!-- <h2 id="winning"></h2> -->
+      <table>
+        <tbody>
+          <tr class="box_row" >
+            <td id="box_0_0" class="box_cell" data-row="0" data-col="0"></td>
 
+            <td id="box_0_1" class="box_cell" data-row="0" data-col="1"></td>
 
+            <td id="box_0_2" class="box_cell" data-row="0" data-col="2"></td>
+          </tr>
+          <tr class="box_row">
+            <td id="box_1_0" class="box_cell" data-row="1" data-col="0"></td>
 
+            <td id="box_1_1" class="box_cell" data-row="1" data-col="1"></td>
 
+            <td id="box_1_2" class="box_cell" data-row="1" data-col="2"></td>
+          </tr>
+          <tr class="box_row">
+            <td id="box_2_0" class="box_cell" data-row="2" data-col="0"></td>
 
+            <td id="box_2_1" class="box_cell" data-row="2" data-col="1"></td>
 
+            <td id="box_2_2" class="box_cell" data-row="2" data-col="2"></td>
+          </tr>
+        </tbody>
+      </table>
 
-
-
-
-
-
+<!-- Loads JQuery library from the link-->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<!-- Links with my javascript page -->
     <script src="js/tic_tac_toe.js" type="text/javascript"></script> <!-- link to javascript -->
 
   </body> <!-- end body -->
