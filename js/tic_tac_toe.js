@@ -17,13 +17,14 @@ function getCharacter(numOfClicks){
 
 //invokes getCharacters on the current clickCounter value.
 //Sets the player to the var charToDisplay
-$('.box_cell').one("click", function(){
+$('.box_cell').on("click", function(){
   clickCounter++;
   var charToDisplay = getCharacter(clickCounter);
-  $(this).css("background-color", "purple").text(charToDisplay);
+
+$(this).css("background-color", "blue").text(charToDisplay);
 
 //this adds X or O to the data of the cell that was clicked on
-  $(this).attr('data-populatedCell', charToDisplay);
+  $(this).data('populatedCell', charToDisplay);
 
   var attrId = $(this).attr('id');
 
@@ -36,8 +37,14 @@ $('.box_cell').one("click", function(){
 
   if (getWinner(charToDisplay)) {
       alert('The winner is ' + charToDisplay + '!');
+      console.log('The winner is ' + charToDisplay + '!');
+      newGame();
   } else if (isATie()) {
       alert('It is a tie!');
+      console.log('It is a tie!');
+      newGame();
+  } else{
+    console.log('Neither win nor tie')
   }
 
 });
@@ -72,11 +79,20 @@ function getWinner(playerToken){
 //Checks to see if there is a tie
 function isATie(){
   var tie = false;
-  if (clickCounter >= 10 && getWinner == false){
+  if (clickCounter >= 9){
     tie = true;
     }
     return tie;
   };
+
+//This function resets the game
+function newGame(){
+  $('.box_cell').empty();
+  $('.box_cell').css("background-color", "transparent");
+  $('.box_cell').data('populatedCell', '');
+  board = ['', '', '', '', '', '', '', '', ''];
+  clickCounter = 0;
+};
 
 });//End of document ready
 
