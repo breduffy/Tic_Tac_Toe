@@ -8,13 +8,19 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <link rel="stylesheet" href="style/style.css"> <!-- build:css(.tmp) styles/main.css -->
+
   </head>
 
   <body><!-- begin body build the game here -->
 
+  <div id="container" class="col-xs-12 col-sm-6">
     <div id="main">
-      <h1 id="main_heading" class="heading" >Let's Play Tic Tac Toe!</h1>
+      <h1 id="main_heading" class="heading col-xs-12 col-sm-6" >Let's Play Tic Tac Toe!</h1>
       <!-- <h2 id="winning"></h2> -->
+      <div id="scoreBoard">
+        <div><h2> X score:</h2><h3 id="xScore"></h3></div>
+        <div><h2> O score:</h2><h3 id="oScore"></h3></div>
+      </div>
       <table>
           <tr class="box_row" >
             <td id="0" class="box_cell" ></td>
@@ -38,11 +44,15 @@
             <td id="8" class="box_cell" ></td>
           </tr>
       </table>
+    </div>
 
 <!-- Loads JQuery library from the link-->
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <!-- Links with my javascript page -->
     <script src="js/tic_tac_toe.js" type="text/javascript"></script> <!-- link to javascript -->
+
+<!-- link to bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   </body> <!-- end body -->
 </html>

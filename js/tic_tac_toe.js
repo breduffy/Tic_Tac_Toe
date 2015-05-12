@@ -6,6 +6,8 @@ $(document).ready(function(){
 var clickCounter = 0;
 var displayChars = ['X', 'O'];
 var board = ['', '', '', '', '', '', '', '', ''];
+var xWins = 0;
+var oWins = 0;
 
 //This function takes the number of clicks and divides by 2. If it's 1, 1 % 2=1, 0 % 2 =0. Will alternate between 0 and 1.
 //Returns the index value of displayChars
@@ -39,6 +41,18 @@ $(this).css("background-color", "blue").text(charToDisplay);
       alert('The winner is ' + charToDisplay + '!');
       console.log('The winner is ' + charToDisplay + '!');
       newGame();
+
+      //This keeps score!
+      if (charToDisplay === 'X') {
+        xWins += 1;
+        $('#xScore').text(xWins);
+      }
+
+      else if (charToDisplay === 'O') {
+        oWins +=1;
+        $('#oScore').text(oWins);
+      }
+
   } else if (isATie()) {
       alert('It is a tie!');
       console.log('It is a tie!');
@@ -55,7 +69,7 @@ $(this).css("background-color", "blue").text(charToDisplay);
 //Checks to see if either X or O has hit all the winning combinations
 function getWinner(playerToken){
   var winner = false;
-    if (
+  if (
       //Wins Horizontal
       (playerToken === board[0] && playerToken === board[1] && playerToken === board [2]) ||
       (playerToken === board[3] && playerToken === board[4] && playerToken === board [5]) ||
@@ -70,11 +84,14 @@ function getWinner(playerToken){
       (playerToken === board[0] && playerToken === board[4] && playerToken === board [8]) ||
       (playerToken === board[2] && playerToken === board[4] && playerToken === board [6])) {
 
-        winner = true;
+    winner = true;
       // console.log(winner 'is the winner');
     }
     return winner;
-};
+
+
+
+  };
 
 //Checks to see if there is a tie
 function isATie(){
@@ -90,9 +107,23 @@ function newGame(){
   $('.box_cell').empty();
   $('.box_cell').css("background-color", "transparent");
   $('.box_cell').data('populatedCell', '');
-  board = ['', '', '', '', '', '', '', '', ''];
+  board = [];
   clickCounter = 0;
 };
+
+ // //Keep score
+ //    function keepScore(){
+ //      if (charToDisplay === 'X') {
+ //        xWins += 1;
+ //        $('#xScore').text(xWins);
+ //      }
+
+ //      else if (charToDisplay === 'O') {
+ //        oWins +=1;
+ //        $('#oScore').text(oWins);
+ //      }
+ //    }
+
 
 });//End of document ready
 

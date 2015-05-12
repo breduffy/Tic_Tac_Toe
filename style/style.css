@@ -4,8 +4,8 @@ body {
 }
 
 #main {
-  margin: 10px auto;
-  width: 800px;
+  margin: 0 auto;
+  width: 90%;
 }
 
 .heading {
@@ -15,24 +15,27 @@ body {
 }
 
 table {
-  margin: 0px auto;
+  margin: 0 auto;
+}
+
+td {
   font-family: arial;
-  font-size: 90px;
+  font-size: 5em;
   text-align: center;
   color: #ffffff;
+  width: 130px;
+  height: 130px;
 }
 
 .box_cell {
   border: 1px solid black;
-  width: 130px;
-  height: 130px;
   border-radius: 10px;
   opacity: .75;
   box-shadow: 2px 2px 0px gray;
 }
 
 .box_cell:hover {
-  background-color: #c9fcf3;
+  background-color: #d9dadb;
 }
 
 
