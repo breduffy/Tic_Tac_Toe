@@ -1,7 +1,11 @@
+'use strict';
+
 //Make sure the document is ready before applying jQuery library
 $(document).ready(function(){
 
-  console.log('starting game');
+// myDataRef = new Firebase('https://archnemesistictactoe.firebaseIO.com/chat/');
+
+console.log('starting game');
 
 var clickCounter = 0;
 var displayChars = ['X', 'O'];
@@ -37,12 +41,13 @@ $(this).css("background-color", "blue").text(charToDisplay);
 
   console.log(board);
 
+  //If there is a winner, this will alert the winner and start a new game
   if (getWinner(charToDisplay)) {
       alert('The winner is ' + charToDisplay + '!');
       console.log('The winner is ' + charToDisplay + '!');
       newGame();
 
-      //This keeps score!
+      //This keeps score
       if (charToDisplay === 'X') {
         xWins += 1;
         $('#xScore').text(xWins);
@@ -53,9 +58,9 @@ $(this).css("background-color", "blue").text(charToDisplay);
         $('#oScore').text(oWins);
       }
 
+  //This alert if there is a tie and will fire off a new game
   } else if (isATie()) {
       alert('It is a tie!');
-      console.log('It is a tie!');
       newGame();
   } else{
     console.log('Neither win nor tie')
@@ -110,19 +115,6 @@ function newGame(){
   board = [];
   clickCounter = 0;
 };
-
- // //Keep score
- //    function keepScore(){
- //      if (charToDisplay === 'X') {
- //        xWins += 1;
- //        $('#xScore').text(xWins);
- //      }
-
- //      else if (charToDisplay === 'O') {
- //        oWins +=1;
- //        $('#oScore').text(oWins);
- //      }
- //    }
 
 
 });//End of document ready

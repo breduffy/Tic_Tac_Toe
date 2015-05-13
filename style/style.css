@@ -1,29 +1,31 @@
 body {
   width: 100%;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  margin: 0 auto;
  /* background-image:;*/ /*add something cool here*/
 }
 
-#main {
+#mainContainer {
   margin: 0 auto;
   width: 90%;
 }
 
-.heading {
+#mainHeading {
   text-align: center;
-  font-family: arial;
   font-size: 50px;
 }
 
 table {
   margin: 0 auto;
+  border-collapse: separate !important;
 }
 
 td {
   font-family: arial;
-  font-size: 5em;
+  font-size: 4em;
   text-align: center;
   color: #ffffff;
-  width: 130px;
+  width: 200px;
   height: 130px;
 }
 
@@ -38,4 +40,19 @@ td {
   background-color: #d9dadb;
 }
 
+#scoreBoard {
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
 
+.score {
+  font-size: 2em;
+}
+
+#xScore {
+  color: blue;
+}
+
+#yScore {
+  color: blue;
+}

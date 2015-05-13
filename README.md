@@ -1,5 +1,6 @@
 # Tic_Tac_Toe
 WDI_Project_1
+Author: Breanne Duffy
 
 USER STORIES
 
@@ -18,4 +19,9 @@ US 3: Player turns alternate until either 'O' or 'X' lines up in a row
   Difficulty:
   Iteration:
 
+LIBRARIES
+
+* index.html
+* style.css
+* tic_tac_tow.js
 
