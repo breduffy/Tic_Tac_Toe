@@ -20,7 +20,7 @@ var oWins = 0;
 $("select").change(function () {
 
   //Array of Arch-Rivals
-  var archRivals = [['Sherlock Holmes', 'Dr. Moriarty'],['Tesla', 'Edison'], ['Coyote', 'Road Runner'], ['Romulus', 'Remus'], ['Alien', 'Predator'], ['Charles Xavier', 'Magneto'], ['Red Sox','Yankees'], ['Hamilton', 'Burr'], ['Mozart', 'Salieri'], ['Dr. Jeckyll', 'Mr. Hyde'], ['Spy', 'Spy']];
+  var archRivals = [['Sherlock Holmes', 'Dr. Moriarty'],['Tesla', 'Edison'], ['Coyote', 'Road Runner'], ['Romulus', 'Remus'], ['Alien', 'Predator'], ['Charles Xavier', 'Magneto'], ['Red Sox','Yankees'], ['Hamilton', 'Burr'], ['Mozart', 'Salieri'], ['Dr. Jeckyll', 'Mr. Hyde'], ['Spy', 'Spy'], ['Caravaggio', 'Baglione'], ['Hector', 'Achilles'],['Michael Corleone','Fredo Corleone'],['The Sharks', 'The Jets'],['The Montagues','The Capulets'],['Hatfields','McCoys'], ['Neo','Agent Smith'], ["I'm a Mac", "and I'm a PC"],['Nature','Nurture']];
 
   var attrVal = $(this).val();
 
