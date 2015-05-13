@@ -1,7 +1,8 @@
 body {
   width: 100%;
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-family: Impact, Charcoal, sans-serif;
   margin: 0 auto;
+  background-color: #72d4c2;
  /* background-image:;*/ /*add something cool here*/
 }
 
@@ -13,6 +14,10 @@ body {
 #mainHeading {
   text-align: center;
   font-size: 50px;
+}
+
+#header {
+  color: #223f3a;
 }
 
 table {
@@ -37,7 +42,7 @@ td {
 }
 
 .box_cell:hover {
-  background-color: #d9dadb;
+  background-color: #9ce0d4;
 }
 
 #scoreBoard {
@@ -50,9 +55,29 @@ td {
 }
 
 #xScore {
-  color: blue;
+  color: #e2f6f2;
 }
 
-#yScore {
-  color: blue;
+#oScore {
+  color: #e2f6f2;
+}
+
+#rivals {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+select {
+  background-color: #9ce0d4;
+  border: 1px solid black;
+  height: 50px;
+  font-size: 20px;
+}
+
+#goodGuy{
+  color: #e2f6f2;
+}
+
+#badGuy{
+  color: #e2f6f2;
 }

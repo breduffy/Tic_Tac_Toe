@@ -5,6 +5,7 @@ $(document).ready(function(){
 
 // myDataRef = new Firebase('https://archnemesistictactoe.firebaseIO.com/chat/');
 
+alert('Choose Arch-Rivals');
 console.log('starting game');
 
 var clickCounter = 0;
@@ -12,6 +13,27 @@ var displayChars = ['X', 'O'];
 var board = ['', '', '', '', '', '', '', '', ''];
 var xWins = 0;
 var oWins = 0;
+
+
+//This function should take the selected Arch-Rivals and put them in the html based on the ID of the option.
+//The ID of the option is equal to the archRival[i]
+$("select").change(function () {
+
+  //Array of Arch-Rivals
+  var archRivals = [['Sherlock Holmes', 'Dr. Moriarty'],['Tesla', 'Edison'], ['Coyote', 'Road Runner'], ['Romulus', 'Remus'], ['Alien', 'Predator'], ['Charles Xavier', 'Magneto'], ['Red Sox','Yankees'], ['Hamilton', 'Burr'], ['Mozart', 'Salieri'], ['Dr. Jeckyll', 'Mr. Hyde'], ['Spy', 'Spy']];
+
+  var attrVal = $(this).val();
+
+  var strGood = archRivals[attrVal][0];
+  var strBad = archRivals[attrVal][1];
+  var str = " ";
+
+  $("#goodGuy").text(strGood + "  ");
+  $("#badGuy").text(strBad + "  ");
+
+})
+
+
 
 //This function takes the number of clicks and divides by 2. If it's 1, 1 % 2=1, 0 % 2 =0. Will alternate between 0 and 1.
 //Returns the index value of displayChars
@@ -27,7 +49,7 @@ $('.box_cell').on("click", function(){
   clickCounter++;
   var charToDisplay = getCharacter(clickCounter);
 
-$(this).css("background-color", "blue").text(charToDisplay);
+$(this).css("background-color", "#4f9487").text(charToDisplay);
 
 //this adds X or O to the data of the cell that was clicked on
   $(this).data('populatedCell', charToDisplay);
@@ -124,3 +146,5 @@ function newGame(){
 
 // NameSpace---put all javascript inside of this namespace?
 // var TicTacToe = TicTacToe || {};
+
+
