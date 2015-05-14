@@ -8,42 +8,6 @@ $(document).ready(function(){
 
 gameRef = new Firebase('https://archrivaltictactoe.firebaseIO.com/');
 
-//Attempt at Firebase
-// var otherPlayer = function(player) {
-//     return player === 'X' ? 'O' : 'X';
-//   };
-
-//   //Get a "unique" id for the user
-//   if (!(gameAuth = gameRef.getAuth())) {
-//     gameRef.authAnonymously(function(error, authData) {
-//       if (error) {
-//         console.log("Login Failed!", error);
-//       } else {
-//         gameAuth = authData;
-//       }
-//     });
-//   }
-
-//   //On load, set up event handling on the object at "gameRef"
-//   gameRef.on('value', function(snapshot) {
-//     var message = snapshot.val();
-//     var disable = false;
-//     console.log(message);
-//     if (message) {
-//       if (gameAuth.uid === message.waitingPlayer) {
-//         player = otherPlayer(message.player);
-//         disable = true;
-//       } else {
-//         player = message.player;
-//       }
-//     }
-//     $('#player').text(player);
-//     $('#move').prop('disabled', disable);
-//   });
-
-
-
-
 alert('Choose Arch-Rivals');
 console.log('starting game');
 
@@ -73,7 +37,7 @@ $("select").change(function () {
   $("#goodGuy").text(strGood + "  ");
   $("#badGuy").text(strBad + "  ");
 
-  //Images
+  //Images contains the links to all the images on the images folder
   images= {
     "Sherlock Holmes": "images/0/holmes.png",
     "Dr. Moriarty": "images/0/moriarty.png",
@@ -83,18 +47,48 @@ $("select").change(function () {
     "Road Runner": "images/2/roadrunner.png",
     "Romulus": "images/3/romulus.png",
     "Remus": "images/3/remus.png",
+    "Alien": "images/4/alien.gif",
+    "Predator": "images/4/predator.gif",
+    "Charles Xavier": "images/5/charlesxavier.gif",
+    "Magneto": "images/5/magneto.gif",
+    "Red Sox": "images/6/redsox.png",
+    "Yankees": "images/6/yankees.png",
+    "Hamilton": "images/7/hamilton.png",
+    "Burr": "images/7/burr.png",
+    "Mozart": "images/8/mozart.png",
+    "Salieri": "images/8/salieri.png",
+    "Dr. Jackyll": "images/9/jeckll.png",
+    "Mr. Hyde": "images/9/hyde.png",
+    "Spy": "images/10/spy1.png",
+    "Spy": "images/10/spy2.png",
+    "Caravaggio": "images/11/caravaggio.png",
+    "Baglione": "images/11/baglione.png",
+    "Hector": "images/12/hector.png",
+    "Achilles": "images/12/achilles.png",
+    "Michael Corleone": "images/13/mcorleone.png",
+    "Fredo Corleone": "images/13/fcorleone.png",
+    "The Sharks": "images/14/sharks.png",
+    "The Jets": "images/14/jets.png",
+    "The Montagues": "images/15/montagues.png",
+    "The Capulets": "images/15/capulets.png",
+    "Hatfields": "images/16/hatfields.png",
+    "McCoys": "images/16/mccoys.png",
+    "Neo" : "images/17/neo.png",
+    "Agent Smith": "images/17/smith.png",
+    "I'm a Mac": "images/18/mac.gif",
+    "and I'm a PC": "images/18/pc.gif",
+    "Nature" : "images/19/nature.png",
+    "Nurture" : "images/19/nurture.png",
+    "Jacob" : "images/20/jacob.gif",
+    "The Smoke Monster": "images/20/smokemonster.gif"
+
   }
 
   //Sets the value of to the array value of strGood or strBad
-  oPlayerImg = images[strGood];
-  xPlayerImg = images[strBad];
+  oPlayerImg = images[strBad];
+  xPlayerImg = images[strGood];
 
 })
-
-
-
-
-
 
 
 //This function takes the number of clicks and divides by 2. If it's 1, 1 % 2=1, 0 % 2 =0. Will alternate between 0 and 1.
@@ -114,7 +108,7 @@ $('.box_cell').on("click", function(){
   //deleted .text(charToDisplay) from end of this to try to use the images
   $(this).css("background-color", "#4f9487");
 
-  $(this).html('<img src="' + (charToDisplay === 'X'? charToDisplay = xPlayerImg : oPlayerImg) + '">');
+  $(this).html('<img src="' + (charToDisplay === 'X'? xPlayerImg : oPlayerImg) + '">');
 
 
   //this adds X or O to the data of the cell that was clicked on
@@ -129,8 +123,8 @@ $('.box_cell').on("click", function(){
 
   console.log(board);
 
-  //Send board to firebase
-  gameRef.set({player: otherPlayer(player), waitingPlayer: gameAuth.uid, board: board});
+  // //Send board to firebase
+  // gameRef.set({player: otherPlayer(player), waitingPlayer: gameAuth.uid, board: board});
 
 
 
