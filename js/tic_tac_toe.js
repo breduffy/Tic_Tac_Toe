@@ -1,11 +1,48 @@
 'use strict';
 
-var myDataRef;
+var gameRef;
+var gameRef, gameAuth, player;
 
 //Make sure the document is ready before applying jQuery library
 $(document).ready(function(){
 
-myDataRef = new Firebase('https://archrivaltictactoe.firebaseIO.com/chat/');
+gameRef = new Firebase('https://archrivaltictactoe.firebaseIO.com/');
+
+//Attempt at Firebase
+// var otherPlayer = function(player) {
+//     return player === 'X' ? 'O' : 'X';
+//   };
+
+//   //Get a "unique" id for the user
+//   if (!(gameAuth = gameRef.getAuth())) {
+//     gameRef.authAnonymously(function(error, authData) {
+//       if (error) {
+//         console.log("Login Failed!", error);
+//       } else {
+//         gameAuth = authData;
+//       }
+//     });
+//   }
+
+//   //On load, set up event handling on the object at "gameRef"
+//   gameRef.on('value', function(snapshot) {
+//     var message = snapshot.val();
+//     var disable = false;
+//     console.log(message);
+//     if (message) {
+//       if (gameAuth.uid === message.waitingPlayer) {
+//         player = otherPlayer(message.player);
+//         disable = true;
+//       } else {
+//         player = message.player;
+//       }
+//     }
+//     $('#player').text(player);
+//     $('#move').prop('disabled', disable);
+//   });
+
+
+
 
 alert('Choose Arch-Rivals');
 console.log('starting game');
@@ -15,6 +52,9 @@ var displayChars = ['X', 'O'];
 var board = ['', '', '', '', '', '', '', '', ''];
 var xWins = 0;
 var oWins = 0;
+var images;
+var oPlayerImg;
+var xPlayerImg;
 
 
 //This function should take the selected Arch-Rivals and put them in the html based on the ID of the option.
@@ -33,7 +73,27 @@ $("select").change(function () {
   $("#goodGuy").text(strGood + "  ");
   $("#badGuy").text(strBad + "  ");
 
+  //Images
+  images= {
+    "Sherlock Holmes": "images/0/holmes.png",
+    "Dr. Moriarty": "images/0/moriarty.png",
+    "Tesla": "images/1/tesla.png",
+    "Edison": "images/1/edison.png",
+    "Coyote": "images/2/coyote.png",
+    "Road Runner": "images/2/roadrunner.png",
+    "Romulus": "images/3/romulus.png",
+    "Remus": "images/3/remus.png",
+  }
+
+  //Sets the value of to the array value of strGood or strBad
+  oPlayerImg = images[strGood];
+  xPlayerImg = images[strBad];
+
 })
+
+
+
+
 
 
 
@@ -51,9 +111,13 @@ $('.box_cell').on("click", function(){
   clickCounter++;
   var charToDisplay = getCharacter(clickCounter);
 
-$(this).css("background-color", "#4f9487").text(charToDisplay);
+  //deleted .text(charToDisplay) from end of this to try to use the images
+  $(this).css("background-color", "#4f9487");
 
-//this adds X or O to the data of the cell that was clicked on
+  $(this).html('<img src="' + (charToDisplay === 'X'? charToDisplay = xPlayerImg : oPlayerImg) + '">');
+
+
+  //this adds X or O to the data of the cell that was clicked on
   $(this).data('populatedCell', charToDisplay);
 
   var attrId = $(this).attr('id');
@@ -64,6 +128,11 @@ $(this).css("background-color", "#4f9487").text(charToDisplay);
   board[attrId] = charToDisplay;
 
   console.log(board);
+
+  //Send board to firebase
+  gameRef.set({player: otherPlayer(player), waitingPlayer: gameAuth.uid, board: board});
+
+
 
   //If there is a winner, this will alert the winner and start a new game
   if (getWinner(charToDisplay)) {

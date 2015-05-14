@@ -81,3 +81,8 @@ select {
 #badGuy{
   color: #e2f6f2;
 }
+
+img {
+  width: 120px;
+  height: 120px;
+}
