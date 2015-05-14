@@ -1,9 +1,12 @@
 {
-  "firebase": "archnemesistictactoe",
+  "firebase": "archrivaltictactoe",
   "public": ".",
-  "ignore": [
+  "ignore":  [
     "firebase.json",
     "**/.*",
-    "**/node_modules/**"
+    "**/node_modules/**",
+    "**/bower_components/**",
+    "**/coverage/**",
+    "**/test/**"
   ]
 }

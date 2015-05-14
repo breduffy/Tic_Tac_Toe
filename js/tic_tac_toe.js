@@ -1,9 +1,11 @@
 'use strict';
 
+var myDataRef;
+
 //Make sure the document is ready before applying jQuery library
 $(document).ready(function(){
 
-// myDataRef = new Firebase('https://archnemesistictactoe.firebaseIO.com/chat/');
+myDataRef = new Firebase('https://archrivaltictactoe.firebaseIO.com/chat/');
 
 alert('Choose Arch-Rivals');
 console.log('starting game');
@@ -20,7 +22,7 @@ var oWins = 0;
 $("select").change(function () {
 
   //Array of Arch-Rivals
-  var archRivals = [['Sherlock Holmes', 'Dr. Moriarty'],['Tesla', 'Edison'], ['Coyote', 'Road Runner'], ['Romulus', 'Remus'], ['Alien', 'Predator'], ['Charles Xavier', 'Magneto'], ['Red Sox','Yankees'], ['Hamilton', 'Burr'], ['Mozart', 'Salieri'], ['Dr. Jeckyll', 'Mr. Hyde'], ['Spy', 'Spy'], ['Caravaggio', 'Baglione'], ['Hector', 'Achilles'],['Michael Corleone','Fredo Corleone'],['The Sharks', 'The Jets'],['The Montagues','The Capulets'],['Hatfields','McCoys'], ['Neo','Agent Smith'], ["I'm a Mac", "and I'm a PC"],['Nature','Nurture']];
+  var archRivals = [['Sherlock Holmes', 'Dr. Moriarty'],['Tesla', 'Edison'], ['Coyote', 'Road Runner'], ['Romulus', 'Remus'], ['Alien', 'Predator'], ['Charles Xavier', 'Magneto'], ['Red Sox','Yankees'], ['Hamilton', 'Burr'], ['Mozart', 'Salieri'], ['Dr. Jeckyll', 'Mr. Hyde'], ['Spy', 'Spy'], ['Caravaggio', 'Baglione'], ['Hector', 'Achilles'],['Michael Corleone','Fredo Corleone'],['The Sharks', 'The Jets'],['The Montagues','The Capulets'],['Hatfields','McCoys'], ['Neo','Agent Smith'], ["I'm a Mac", "and I'm a PC"],['Nature','Nurture'],['Jacob', 'The Smoke Monster']];
 
   var attrVal = $(this).val();
 
