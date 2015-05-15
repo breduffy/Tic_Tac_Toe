@@ -26,7 +26,7 @@ var xPlayerImg;
 $("select").change(function () {
 
   //Array of Arch-Rivals
-  var archRivals = [['Sherlock Holmes', 'Dr. Moriarty'],['Tesla', 'Edison'], ['Coyote', 'Road Runner'], ['Romulus', 'Remus'], ['Alien', 'Predator'], ['Charles Xavier', 'Magneto'], ['Red Sox','Yankees'], ['Hamilton', 'Burr'], ['Mozart', 'Salieri'], ['Dr. Jeckyll', 'Mr. Hyde'], ['Spy', 'Spy'], ['Caravaggio', 'Baglione'], ['Hector', 'Achilles'],['Michael Corleone','Fredo Corleone'],['The Sharks', 'The Jets'],['The Montagues','The Capulets'],['Hatfields','McCoys'], ['Neo','Agent Smith'], ["I'm a Mac", "and I'm a PC"],['Nature','Nurture'],['Jacob', 'The Smoke Monster']];
+  var archRivals = [['Sherlock Holmes', 'Dr. Moriarty'],['Tesla', 'Edison'], ['Coyote', 'Road Runner'], ['Romulus', 'Remus'], ['Alien', 'Predator'], ['Charles Xavier', 'Magneto'], ['Red Sox','Yankees'], ['Hamilton', 'Burr'], ['Mozart', 'Salieri'], ['Dr. Jeckyll', 'Mr. Hyde'], ['Spy1', 'Spy2'], ['Caravaggio', 'Baglione'], ['Hector', 'Achilles'],['Michael Corleone','Fredo Corleone'],['The Sharks', 'The Jets'],['The Montagues','The Capulets'],['Hatfields','McCoys'], ['Neo','Agent Smith'], ["I'm a Mac", "and I'm a PC"],['Nature','Nurture'],['Jacob', 'The Smoke Monster']];
 
   var attrVal = $(this).val();
 
@@ -57,30 +57,30 @@ $("select").change(function () {
     "Burr": "images/7/burr.png",
     "Mozart": "images/8/mozart.png",
     "Salieri": "images/8/salieri.png",
-    "Dr. Jackyll": "images/9/jeckll.png",
+    "Dr. Jeckyll": "images/9/jeckyll.png",
     "Mr. Hyde": "images/9/hyde.png",
-    "Spy": "images/10/spy1.png",
-    "Spy": "images/10/spy2.png",
+    "Spy1": "images/10/spy1.png",
+    "Spy2": "images/10/spy2.png",
     "Caravaggio": "images/11/caravaggio.png",
     "Baglione": "images/11/baglione.png",
     "Hector": "images/12/hector.png",
     "Achilles": "images/12/achilles.png",
-    "Michael Corleone": "images/13/mcorleone.png",
-    "Fredo Corleone": "images/13/fcorleone.png",
+    "Michael Corleone": "images/13/mcorleone.gif",
+    "Fredo Corleone": "images/13/fcorleone.gif",
     "The Sharks": "images/14/sharks.png",
     "The Jets": "images/14/jets.png",
-    "The Montagues": "images/15/montagues.png",
-    "The Capulets": "images/15/capulets.png",
-    "Hatfields": "images/16/hatfields.png",
-    "McCoys": "images/16/mccoys.png",
+    "The Montagues": "images/15/montagues.gif",
+    "The Capulets": "images/15/capulets.gif",
+    "Hatfields": "images/16/hatfields.gif",
+    "McCoys": "images/16/mccoys.gif",
     "Neo" : "images/17/neo.png",
     "Agent Smith": "images/17/smith.png",
     "I'm a Mac": "images/18/mac.gif",
     "and I'm a PC": "images/18/pc.gif",
-    "Nature" : "images/19/nature.png",
-    "Nurture" : "images/19/nurture.png",
-    "Jacob" : "images/20/jacob.gif",
-    "The Smoke Monster": "images/20/smokemonster.gif"
+    "Nature" : "images/19/nature.gif",
+    "Nurture" : "images/19/nurture.gif",
+    "Jacob" : "images/20/jacob.png",
+    "The Smoke Monster": "images/20/smokemonster.png"
 
   }
 
